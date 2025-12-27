@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADISS LUXURY | Luxury E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <script src="scriptAdiss.js"></script>
+</head>
+<body>
 
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <a href="#home" class="logo">ADISS LUXURY</a>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#collections" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-icons">
+                <button aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button onclick="toggleCart()" class="cart-btn" style="position: relative;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span id="cartCount" class="cart-badge" style="display:none">0</span>
+                </button>
+                <button onclick="toggleTheme()" aria-label="Toggle Theme">
+                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-15.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2m-12.66 5.66-1.41 1.41m14.14-14.14-1.41 1.41"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">Bag</h2>
+            <button onclick="toggleCart()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <div id="cartItems" class="cart-list"></div>
+        <div class="cart-footer">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span style="font-size: 9px; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.1em;">Total</span>
+                <span id="cartTotal" style="font-size: 14px; font-weight: 300;">$0</span>
+            </div>
+            <button class="btn-checkout" style="width:100%; padding:20px; background:var(--text-color); color:var(--bg-color); text-transform:uppercase; font-size:10px; letter-spacing:0.3em;">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-img-container">
+                <img src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?auto=format&fit=crop&q=80&w=2000" class="hero-img" alt="Hero">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">We Don’t Sell Clothes. We Sell Confidence.</h1><br>
+                <p class="hero-parg">At Adiss Luxury, we believe confidence defines success.
+Our raw materials are responsibly sourced from Ethiopia, then assembled and crafted in Italy by highly skilled artisans. 
+                    Using the highest-quality materials and precise craftsmanship, we create products that deliver lasting comfort, elegance, and strength.</p>
+                <a href="#collections" class="btn-hero" style="display:inline-block;">Explore Collection</a>
+            </div>
+        </section>
+
+        <section id="collections" class="section-container">
+            <div class="view-header">
+                <div>
+                    <h1 class="view-title">The Collections</h1>
+                    <p class="view-subtitle">Edition limted edition</p>
+                </div>
+            </div>
+            <div id="productGrid" class="product-grid"></div>
+        </section>
+
+        <section id="about" class="section-container" style="background: var(--card-bg);">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 class="view-title" style="font-size: 48px; margin-bottom: 30px;">Atelier ADISS</h1>
+                <p style="font-size: 18px; font-weight: 200; line-height: 1.8; opacity: 0.7; margin-bottom: 60px;">
+                    True luxury is felt, not seen. Our philosophy centers on architectural silhouettes that prioritize longevity over temporary trends. Every piece is a testament to the quiet power of precision.
+                </p>
+                <img src="Blue and White Modern Denim Fashion Apparel and Jeans Sale Instagram Post (1).png" style="width: 100%;  border-radius: 2px;" alt="Studio">
+            </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <div class="view-header" style="justify-content: center; text-align: center;">
+                <div>
+                    <h1 class="view-title">Inquiries</h1>
+                    <p class="view-subtitle">Connect with the Atelier</p>
+                </div>
+            </div>
+            
+            <div class="contact-box">
+                <div class="contact-info">
+                    <span class="contact-label">Client Relations</span>
+                    <p class="contact-value">concierge@adissluxury.com</p>
+                    
+                    <span class="contact-label">Atelier Address</span>
+                    <p class="contact-value">UAE ,ETHIOPIA ,UK ,<br>Paris, France</p>
+                    
+                    <span class="contact-label">Direct Line</span>
+                    <p class="contact-value">+9715 42 25 05 05</p>
+                </div>
+
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault()">
+                        <span class="contact-label">Name</span>
+                        <input type="text" class="contact-input" placeholder="Full name">
+                        
+                        <span class="contact-label">Email</span>
+                        <input type="email" class="contact-input" placeholder="Email address">
+                        
+                        <span class="contact-label">Message</span>
+                        <textarea class="contact-input" rows="3" placeholder="How may we assist you?"></textarea>
+                        
+                        <button type="submit" class="btn-submit-contact">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <div style="font-size: 14px; font-weight: 300; letter-spacing: 0.6em; margin-bottom: 60px;">ADISS LUXURY</div>
+           
+            <div class ="social-icons" >
+            <a href ="https://www.instagram.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> </a>
+            <a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="http://www.linkedin.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+            
+            <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.3;">
+                © ADISS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+  
+</body>
+</html>
